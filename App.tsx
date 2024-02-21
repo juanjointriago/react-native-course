@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 //tipo de dato esperado
 type gender = 'male' | 'female' | 'no-binary'
@@ -15,46 +16,65 @@ interface PersonInterface {
 }
 
 
-
 // console.log(incrementAgePerson(persona));
-
+/**
+ * @description Componente funcional
+ * @returns 
+ */
 
 export default function App() {
-  const incrementAgePerson = (person: PersonInterface, ageNumber: number = 9) => {
-    const newAge = person.age + ageNumber;
-    const newPerson: PersonInterface = {
-      age: newAge,
-      name: person.name,
-      lastName: person.lastName,
-      email: person.email,
-      gender: person.gender,
-      isActive: person.isActive
-    }
-    return newPerson;
-  }
 
-  const persona: PersonInterface = {
+  //useState Gestor de estados de React 
+  const [persona, setPersona] = useState<PersonInterface>({
     name: 'Jose',
     lastName: 'Perez',
     email: null,
     age: 31,
     gender: 'male',
     isActive: true
-  };
+  });
+
+  const incrementAgePerson = (person: PersonInterface, ageNumber: number = 9) => {
+    const newAge = person.age + ageNumber;
+    // const newPerson: PersonInterface = {
+    //   age: newAge,
+    //   name: person.name,
+    //   lastName: person.lastName,
+    //   email: person.email,
+    //   gender: person.gender,
+    //   isActive: person.isActive
+    // }
+    return newAge;
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Hola mundo bienevenidos a React Native!</Text>
       <Button
         onPress={() => {
-          incrementAgePerson(persona);
-          console.log('Ejecutando funcion de incrementar edad de persona');
-          console.log({persona});
+          // incrementAgePerson(persona);
+          // console.log('Ejecutando funcion de incrementar edad de persona');
+          // console.log({ persona });
+          setPersona({
+            name: 'Jose',
+            lastName: 'Perez',
+            email: null,
+            age: incrementAgePerson(persona),
+            gender: 'male',
+            isActive: true
+          })
         }}
         title="Presioname"
         color="#841584"
-
       />
+      <TouchableOpacity onPress={() => console.log('Presionaron la imagen')}>
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png',
+          }}
+        />
+      </TouchableOpacity>
       <Text>{persona.name}</Text>
       <Text>{persona.lastName}</Text>
       <Text>{persona.age}</Text>
@@ -81,5 +101,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     color: 'yellow',
-  }
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
 })
