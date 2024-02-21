@@ -1,109 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
+import { FadeInImage } from './src/components/FadeInImage';
 
-//tipo de dato esperado
-type gender = 'male' | 'female' | 'no-binary'
-
-//Interfaz para tipar objetos con mas de una propidad
-interface PersonInterface {
-  name: string;
-  lastName: string;
-  email: string | null;
-  age: number;
-  gender: gender;
-  isActive: boolean;
-}
-
-
-// console.log(incrementAgePerson(persona));
-/**
- * @description Componente funcional
- * @returns 
- */
 
 export default function App() {
-
-  //useState Gestor de estados de React 
-  const [persona, setPersona] = useState<PersonInterface>({
-    name: 'Jose',
-    lastName: 'Perez',
-    email: null,
-    age: 31,
-    gender: 'male',
-    isActive: true
-  });
-
-  const incrementAgePerson = (person: PersonInterface, ageNumber: number = 9) => {
-    const newAge = person.age + ageNumber;
-    // const newPerson: PersonInterface = {
-    //   age: newAge,
-    //   name: person.name,
-    //   lastName: person.lastName,
-    //   email: person.email,
-    //   gender: person.gender,
-    //   isActive: person.isActive
-    // }
-    return newAge;
-  }
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hola mundo bienevenidos a React Native!</Text>
-      <Button
-        onPress={() => {
-          // incrementAgePerson(persona);
-          // console.log('Ejecutando funcion de incrementar edad de persona');
-          // console.log({ persona });
-          setPersona({
-            name: 'Jose',
-            lastName: 'Perez',
-            email: null,
-            age: incrementAgePerson(persona),
-            gender: 'male',
-            isActive: true
-          })
-        }}
-        title="Presioname"
-        color="#841584"
-      />
-      <TouchableOpacity onPress={() => console.log('Presionaron la imagen')}>
-        <Image
-          style={styles.tinyLogo}
-          source={{
-            uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png',
-          }}
-        />
-      </TouchableOpacity>
-      <Text>{persona.name}</Text>
-      <Text>{persona.lastName}</Text>
-      <Text>{persona.age}</Text>
-      <Text>{
-        persona.gender === 'male'
-          ? 'masculino'
-          : persona.gender === 'female'
-            ? 'femenino'
-            : 'No binario'}</Text>
+    <View>
+      <FadeInImage uri={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png'}/>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '95%',
-    height: '70%',
-    borderRadius: 30,
-    flex: 1,
-    backgroundColor: 'gray',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 24,
-    color: 'yellow',
-  },
-  tinyLogo: {
-    width: 50,
-    height: 50,
-  },
-})

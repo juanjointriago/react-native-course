@@ -3,11 +3,12 @@ import { ActivityIndicator, Animated, ImageErrorEventData, ImageStyle, NativeSyn
 
 interface Props {
     uri: string;
-    style: StyleProp<ImageStyle>
+    style?: StyleProp<ImageStyle>
 }
 
 export const FadeInImage = ({ uri, style }: Props) => {
 
+    console.log({uri})
     const [isLoading, setIsLoading] = useState(true);
 
     const finishLoading = () => setIsLoading(false);
