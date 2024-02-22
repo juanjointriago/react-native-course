@@ -1,9 +1,11 @@
-import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { Navigator } from './src/navigator/Navigator';
 
 export default function App() {
   return (
     //navigator
-    <View>
-    </View>
+    <NavigationContainer>
+      <Navigator/>
+    </NavigationContainer>
   );
 }
