@@ -1,3 +1,5 @@
+
+
 ### Para levantar proyecto
 
 npm install
@@ -13,3 +15,12 @@ git pull
 # si modificaron localmente y necesitan rebasar lo que tienen con lo nuevo ejecutar
 git pull --ff
 
+# dentro del terminal metro 
+a = abrir en android (obligatoriamente conectado un telefono en modo desarrollo y depuracion usb activada)
+
+# problemas de errores de caché
+eliminar carpeta node_modules
+ejecutar nuevamente 
+# npm i
+
+ejecutar el proyecto desde el telefono android conectado
