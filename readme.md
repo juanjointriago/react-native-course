@@ -8,6 +8,16 @@ npm install
 # recuerde tener actualziado android studio
 npx expo prebuild -p android
 
+# si les sale vacio el proyecto con un archivo readme.md
+
+# verificar la rama ejectando:
+git branch
+
+si les muestra main
+
+# cambiarse a la rama master
+git checkout master
+
 # para descargar cambios
 
 git pull
