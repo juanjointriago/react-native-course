@@ -9,7 +9,6 @@ interface Props {
 }
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeigth = Dimensions.get('window').height;
 
 export const PokemonCard = ({ pokemon }: Props) => {
     const [bgColor, setbgColor] = useState('gray');
