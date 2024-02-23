@@ -19,7 +19,7 @@ export const usePokemonPaginated = () => {
         const newPokemonList: SimplePokemon[] = pokemonList.map(({ name, url }) => {
             const urlPaths = url.split('/');
             const id = urlPaths[urlPaths.length - 2];
-            const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`
+            const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ id }.png`
             return { id, picture, name }
         })
         setSimplePokemonList([...simplePokemonList, ...newPokemonList]);
