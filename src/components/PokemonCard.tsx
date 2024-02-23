@@ -16,12 +16,12 @@ export const PokemonCard = ({ pokemon }: Props) => {
     // const navigation = useNavigation();
 
     useEffect(() => {
-        ImageColors.getColors(pokemon.picture, { fallback: 'gray' })
+        ImageColors.getColors(pokemon.picture, { fallback: '#000000' })
             .then(colors => {
                 if (!isMounted.current) return;
-                (colors.platform === 'android') ? setbgColor(colors.dominant || 'gray')
-                    : (colors.platform === 'ios') ? setbgColor(colors.background || 'gray')
-                        : setbgColor(colors.vibrant || 'gray')
+                (colors.platform === 'android') ? setbgColor(colors.dominant || '#000000')
+                    : (colors.platform === 'ios') ? setbgColor(colors.background || '#000000')
+                        : setbgColor('grey')
             }
             )
         return () => {
