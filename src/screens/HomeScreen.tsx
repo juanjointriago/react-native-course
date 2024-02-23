@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { usePokemonPaginated } from "../hooks/usePokemonPaginated";
 import { globalStyles } from '../theme/appTheme';
@@ -14,6 +14,7 @@ export const HomeScreen = () => {
         <>
             <Image
                 source={require('../assets/pokebola.png')}
+                style={globalStyles.pokebolaBG}
             />
             <View
                 style={{ alignItems: 'center' }}>
