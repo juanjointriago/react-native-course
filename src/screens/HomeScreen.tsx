@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { usePokemonPaginated } from "../hooks/usePokemonPaginated";
 import { globalStyles } from '../theme/appTheme';
@@ -29,6 +29,7 @@ export const HomeScreen = () => {
                                 ...globalStyles.title,
                                 ...globalStyles.globalMargin,
                                 top: top + 20,
+                                marginBottom: 10,
                                 paddingBottom: 10
                             }}>
                             Pokedex
