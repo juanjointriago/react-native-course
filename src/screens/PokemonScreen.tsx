@@ -23,9 +23,7 @@ export const PokemonScreen = ({ navigation, route }: Props) => {
           style={{ ...styles.backButton, top: top + 5 }}>
           <Icon name="arrow-back-outline" color={'white'} size={35} />
         </TouchableOpacity>
-      <Text style={{
-        ...styles.pokemonName, top: top + 40
-      }}>
+      <Text style={{  ...styles.pokemonName, top: top + 40 }}>
         {name + '\n'}# {id}
         </Text>
         <Image source={require('../assets/pokebola-blanca.png')} 
