@@ -36,7 +36,6 @@ export const PokemonDetail = ({ pokemon }: Props) => {
                 <FadeInImage uri={pokemon.sprites.back_default} style={styles.basicSprites} />
                 <FadeInImage uri={pokemon.sprites.front_shiny} style={styles.basicSprites} />
                 <FadeInImage uri={pokemon.sprites.back_shiny} style={styles.basicSprites} />
-                {/* <FadeInImage uri={pokemon.sprites.front_female} style={styles.basicSprites}/> */}
             </ScrollView>
             <View style={styles.container}>
                 <Text style={styles.title}>Habilidades Básicas:</Text>

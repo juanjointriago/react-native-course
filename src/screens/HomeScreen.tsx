@@ -2,7 +2,7 @@ import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { usePokemonPaginated } from "../hooks/usePokemonPaginated";
 import { globalStyles } from '../theme/appTheme';
-import { PokemonCard } from "../components/PokemonCard.1";
+import { PokemonCard } from "../components/PokemonCard";
 
 export const HomeScreen = () => {
     //si se encuantra instalado react native navigation react-native-screens react native safe area context

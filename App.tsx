@@ -6,6 +6,7 @@ export default function App() {
     //navigator
     <NavigationContainer>
       <Navigator/>
+      {/* //todo tabs */}
     </NavigationContainer>
   );
 }
