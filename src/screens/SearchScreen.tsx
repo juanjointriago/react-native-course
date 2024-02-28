@@ -11,20 +11,20 @@ import { PokemonCard } from "../components/PokemonCard";
 export const SearchScreen = () => {
   const { top } = useSafeAreaInsets();
   const { isFetching, simplePokemonList } = usePokemonSearch();
-  const [pokemonFilterder, setPokemonFilterder] = useState<SimplePokemon[]>([]);
+  const [pokemonFiltered, setPokemonFilterd] = useState<SimplePokemon[]>([]);
   const [term, setTerm] = useState('');
 
   useEffect(() => {
     if (term.length === 0) {
-      return setPokemonFilterder([]);
+      return setPokemonFilterd([]);
     }
     if (isNaN(Number(term))) {
-      setPokemonFilterder(simplePokemonList.filter((poke) => poke.name.toLowerCase()
+      setPokemonFilterd(simplePokemonList.filter((poke) => poke.name.toLowerCase()
         .includes(term.toLowerCase()))
       );
     } else {
       const pokemonById = simplePokemonList.find((poke) => poke.id === term);
-      setPokemonFilterder((pokemonById) ? [pokemonById] : []);
+      setPokemonFilterd((pokemonById) ? [pokemonById] : []);
     }
   }, [term]);
 
@@ -35,25 +35,30 @@ export const SearchScreen = () => {
     <>
       {isFetching ? <Loading />
         : <View style={{ flex: 1, marginHorizontal: 20 }}>
-          <SearchInput onDebounce={(value)=>setTerm(value)} style={{position: "absolute", zIndex: 999, width: '100%' , top : (Platform.OS === 'ios')?top:top+30}} />
-          <FlatList
-            data={pokemonFilterder}
-            keyExtractor={(pokemon) => pokemon.id}
-            showsVerticalScrollIndicator={false}
-            numColumns={2}
-            //header
-            ListHeaderComponent={(
-              <Text style={
-                {
-                  ...globalStyles.title,
-                  ...globalStyles.globalMargin,
-                  paddingBottom: 10,
-                  marginTop: (Platform.OS === 'ios') ? top + 60 : top + 80
-                }}>
-                {term}</Text>
-            )}
-            renderItem={(item) => (<PokemonCard pokemon={item} />)}
-          />
+          <SearchInput onDebounce={(value)=>setTerm(value)} 
+          style={{
+            position: "absolute", 
+            zIndex: 999, 
+            width: '100%' , 
+          top : (Platform.OS === 'ios')?top:top+30}} />
+            <FlatList
+                data={ pokemonFiltered }
+                keyExtractor={ (pokemon) => pokemon.id }
+                showsVerticalScrollIndicator={ false }
+                numColumns={ 2 }
+
+                    // Header
+                    ListHeaderComponent={(
+                        <Text style={{
+                            ...globalStyles.title,
+                            ...globalStyles.globalMargin,
+                            paddingBottom: 10,
+                            marginTop: ( Platform.OS === 'ios' ) ? top + 60 : top + 80
+                        }}>{ term }</Text>
+                    )}
+
+                    renderItem={ ({ item }) => ( <PokemonCard pokemon={ item } /> )}
+                />
         </View>}
     </>
   )
