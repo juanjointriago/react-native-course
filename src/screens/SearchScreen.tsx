@@ -35,7 +35,7 @@ export const SearchScreen = () => {
     <>
       {isFetching ? <Loading />
         : <View style={{ flex: 1, marginHorizontal: 20 }}>
-          <SearchInput />
+          <SearchInput onDebounce={(value)=>setTerm(value)} style={{position: "absolute", zIndex: 999, width: '100%' , top : (Platform.OS === 'ios')?top:top+30}} />
           <FlatList
             data={pokemonFilterder}
             keyExtractor={(pokemon) => pokemon.id}
