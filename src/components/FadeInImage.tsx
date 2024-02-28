@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ActivityIndicator, Animated, ImageErrorEventData, ImageStyle, NativeSyntheticEvent, StyleProp, View } from 'react-native'
 import { useAnimation } from '../hooks/useAnimation';
+import { PokeballLoading } from './PokeballLoading';
 
 
 interface Props {
@@ -31,11 +32,12 @@ export const FadeInImage = ({ uri, style = {} } : Props) => {
             
             {
                 isLoading && 
-                    <ActivityIndicator 
-                        style={{ position: 'absolute' }} 
-                        color="grey"
-                        size={ 30 }
-                    />
+                    // <ActivityIndicator 
+                    //     style={{ position: 'absolute' }} 
+                    //     color="grey"
+                    //     size={ 30 }
+                    // />
+                    <PokeballLoading/>
             }
 
             <Animated.Image 
