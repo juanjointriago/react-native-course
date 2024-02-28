@@ -4,8 +4,6 @@ import { TabHome } from "./TabHome";
 import Icon from "react-native-vector-icons/Ionicons";
 import { TabSearch } from "./TabSearch";
 
-
-
 const Tab = createBottomTabNavigator();
 export const Tabs = () => {
   return (
@@ -14,6 +12,7 @@ export const Tabs = () => {
         backgroundColor: 'white'
     }}
     screenOptions={{
+      headerShown: false,
         tabBarActiveTintColor:'#5856D6',
         tabBarLabelStyle: {
             marginBottom: (Platform.OS === 'ios')?0:10,
