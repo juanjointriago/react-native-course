@@ -1,37 +1,43 @@
 {
   "expo": {
-    "name": "FirstClass",
-    "slug": "FirstClass",
-    "version": "1.0.0",
-    "orientation": "portrait",
+    "name": "Pokedex",
+    "slug": "Pokedex",
+    "version": "0.0.1",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.juanintriago.FirstClass"
-    },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+      "versionCode": 1,
+      "adaptativeIcon": {
+        "foregroundImage": "./assets/adaptative-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.juanintriago.FirstClass"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      "package": "com.itsi.pokedex"
     },
     "extra": {
       "eas": {
-        "projectId": "4ca3c660-1d7f-4665-b779-cdef8e2b49be"
+        "projectId": "e360add9-8c09-4c43-bfc9-f84edb595105"
       }
     }
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "com.juanintriago.FirstClass"
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#ffffff"
+    },
+    "package": "com.juanintriago.FirstClass"
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
   }
 }
